@@ -1,4 +1,8 @@
 // Work in progress
+const parse_px_biopsy = () => {
+  alert("A work in progress")
+  return;
+}
 
 const make_markdown_table = () => {
   function columnWidth(rows, columnIndex) {

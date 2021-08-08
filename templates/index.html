@@ -9,6 +9,8 @@
 {% block bodyattributes %}{% endblock %}
 {% block body %}
 <h1>Radonc tools</h1>
+
+<h3>Markdown table maker (Excel table copy format)</h3>
 <textarea id='tableinput' name='tableinput' rows='10', cols='80'>
   Paste the ms office table here...
 </textarea>
@@ -17,5 +19,13 @@
   Output markdown table will appear here...
 </textarea>
 
+<h3>Prostate biopsy parser</h3>
+<textarea id='pxbiopsyinput' name='pxbiopsyinput' rows='10', cols='80'>
+  Paste the raw prostate biopsy text here
+</textarea>
+<button onclick='parse_px_biopsy()' name='runpxbiopsy' id='runpxbiopsy' value='runpxbiopsy'>Make Markdown Table</button>
+<textarea id='pxbiopsyoutput' name='pxbiopsyoutput' rows='10', cols='80'>
+  Parsed and outputted biopsy line will appear here...
+</textarea>
 
 {% endblock %}
