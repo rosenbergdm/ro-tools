@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<meta http-equiv="refresh" content="300">
+<link rel="stylesheet" href="/static/tools.css">
+<script src="/static/tools.js"></script>
+{% endblock %}
+{% block title %}Radonc tools{% endblock %}
+{% block bodyattributes %}{% endblock %}
+{% block body %}
+<h1>Radonc tools</h1>
+<textarea id='tableinput' name='tableinput' rows='10', cols='80'>
+  Paste the ms office table here...
+</textarea>
+<button onclick='make_markdown_table()' name='runtable' id='runtable' value='runtable'>Make Markdown Table</button>
+<textarea id='tableoutput' name='tableoutput' rows='10', cols='80'>
+  Output markdown table will appear here...
+</textarea>
+
+
+{% endblock %}
