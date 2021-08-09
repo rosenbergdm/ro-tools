@@ -121,13 +121,17 @@ var getRegionName = function (text) {
   } else if (/right/.test(low_text)) {
     return { rname: "right", err: null };
   } else if (/mri/.test(low_text)) {
-    if (low_text.match(/#([0-9]+)/)) {
-      var m = low_text.match(/#([0-9]+)/);
+    if (low_text.match(/#? ?([0-9]+)/)) {
+      var m = low_text.match(/#? ?([0-9]+)/);
       return { rname: `MRI target #${m[1]}`, err: null };
     }
+  } else if (/ l /.test(low_text)) {
+    return { rname: "left", err: null };
+  } else if (/ r /.test(low_text)) {
+    return { rname: "right", err: null };
   }
   return {
-    region: null,
+    rname: "?NAME?",
     err: new Error(`Could not identify region in text '${low_text}'`),
   };
 };
