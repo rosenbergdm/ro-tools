@@ -5,8 +5,11 @@
  * @description : parseBiopsy
  */
 
-const fs = require('fs')
-const rawtext = fs.readFileSync('/Users/davidrosenberg/temp.prostatebiopsy.txt', 'utf8')
+// const fs = require("fs");
+// const rawtext = fs.readFileSync(
+//   "/Users/davidrosenberg/temp.prostatebiopsy.txt",
+//   "utf8"
+// );
 
 var makeRegion = function (
   rname = "",
@@ -103,9 +106,12 @@ var getGleasonScore = function (text) {
   const matcher = new RegExp(/gleason.{1,10}([0-5]) ?\+ ?([0-5])/);
   if (matcher.test(text)) {
     var scoreMatch = text.match(matcher);
-    return { gleason: [Number(scoreMatch[1]), Number(scoreMatch[2])], err: null};
+    return {
+      gleason: [Number(scoreMatch[1]), Number(scoreMatch[2])],
+      err: null,
+    };
   }
-  return { gleason: [0, 0], err: null}
+  return { gleason: [0, 0], err: null };
 };
 
 var getRegionName = function (text) {
@@ -135,12 +141,45 @@ var getMaxInvolvement = function (text) {
   return { involvement: 0, err: null };
 };
 
+const printRegion = function(region) {
+  var result = `${region.rname}: ${region.cores[0]}/${region.cores[1]} areas positive for adenocarcinoma`;
+  if (region.cores[0] == 0) {
+    return result;
+  } else {
+    result = `${result}, maximum Gleason score ${region.gleason[0]} + ${region.gleason[1]} = ${region.gleason[0] + region.gleason[1]}, up to ${region.involvement}% involved`;
+    if (region.ece) {
+      result = `${result}, extracapsular extension seen`
+    }
+    if (region.svi) {
+      result = `${result}, seminal vesicle involvement seen`
+    }
+  }
+  return result;
+}
+
 const printSummary = function (workingRegions) {
-   console.log(JSON.stringify(workingRegions));
-};
+  var resultLines = [];
+  var maxGleason = [0, 0];
+  var totalCores = [0, 0];
+  var maxInvolvement = 0;
+  var totalEce = false;
+  var totalSvi = false;
+  Object.keys(workingRegions).forEach( (x) => {
+    resultLines.push(printRegion(workingRegions[x]));
+    maxGleason = higherGleason(maxGleason, workingRegions[x].gleason);
+    totalCores = sumCores(totalCores, workingRegions[x].cores);
+    maxInvolvement = Math.max(maxInvolvement, workingRegions[x].involvement);
+    totalEce = totalEce || workingRegions[x].ece;
+    totalSvi = totalSvi || workingRegions[x].svi;
+  });
+
+  var result = resultLines.join('; ');
+  result += ("; " + printRegion(makeRegion('total', totalCores, maxGleason, maxInvolvement, totalEce, totalSvi)));
+  return result;
+}
 
 var parseBiopsy = function (rawtext) {
-  var lines = rawtext.split('\n');
+  var lines = rawtext.split("\n");
 
   var regions = {};
 
@@ -155,28 +194,36 @@ var parseBiopsy = function (rawtext) {
       // Starting a new section
       while (next_l === null) {
         next_l = lines.shift();
-        if ( ( first_line_finder.test(next_l))  || (/^\S*$/.test(next_l)) ) {
+        if (first_line_finder.test(next_l) || /^\S*$/.test(next_l)) {
           // we are starting a new section, put it back
-          regions = addNewRegion(getRegion(l.join(' ').toLowerCase()), regions);
+          regions = addNewRegion(getRegion(l.join(" ").toLowerCase()), regions);
           // console.log(JSON.stringify(regions) + "\n\n\n");
-          if ( first_line_finder.test(next_l)) {
+          if (first_line_finder.test(next_l)) {
             lines.unshift(next_l);
           }
           continue startwhile;
           // continue here;
+        } else if (/electronically signed/.test(l.join('\n').toLowerCase())) {
+          lines = [];
+          continue startwhile;
         } else {
           l.push(next_l);
           next_l = null;
         }
       }
-      regions = addNewRegion(getRegion(l.join(' ').toLowerCase()), regions);
+      regions = addNewRegion(getRegion(l.join(" ").toLowerCase()), regions);
       // console.log(JSON.stringify(regions) + "\n\n\n");
     }
   }
-  regions = addNewRegion(getRegion(l.join(' ').toLowerCase()), regions);
+  // regions = addNewRegion(getRegion(l.join(" ").toLowerCase()), regions);
   // console.log(JSON.stringify(regions));
   return { summary: printSummary(regions), regions: regions };
 };
 
-parseBiopsy(rawtext);
+const runParseBiopsy = function() {
+  var input_text = document.getElementById('pxbiopsyinput').value;
+  const result = parseBiopsy(input_text);
+  document.getElementById('pxbiopsyoutput').value = result.summary;
+  return
+}
 
