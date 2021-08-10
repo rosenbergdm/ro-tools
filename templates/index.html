@@ -15,18 +15,36 @@
 <textarea id='tableinput' name='tableinput' rows='10', cols='80'>
   Paste the ms office table here...
 </textarea>
+<br />
 <button onclick='make_markdown_table()' name='runtable' id='runtable' value='runtable'>Make Markdown Table</button>
+<br />
 <textarea id='tableoutput' name='tableoutput' rows='10', cols='80'>
   Output markdown table will appear here...
 </textarea>
-
+<br />
+<hr />
+<br />
 <h3>Prostate biopsy parser</h3>
 <textarea id='pxbiopsyinput' name='pxbiopsyinput' rows='10', cols='80'>
   Paste the raw prostate biopsy text here
 </textarea>
+<br />
 <button onclick='runParseBiopsy()' name='runpxbiopsy' id='runpxbiopsy' value='runpxbiopsy'>Parse biopsy results</button>
+<br />
 <textarea id='pxbiopsyoutput' name='pxbiopsyoutput' rows='10', cols='80'>
   Parsed and outputted biopsy line will appear here...
 </textarea>
+<br />
+
+<h3>Bash date sorting function</h3>
+<span style="white-space:pre;display:block;margin:25px;font-family:'Lucida Console', monospace">
+datesorter ()
+{
+    pbpaste | gsort -t '/' -k3,4g -k1,2g | pbcopy;
+    pbpaste
+}
+</span>
+
+
 
 {% endblock %}
