@@ -1,9 +1,4 @@
 // Work in progress
-const parse_px_biopsy = () => {
-  alert("A work in progress");
-  return;
-};
-
 const make_markdown_table = () => {
   function columnWidth(rows, columnIndex) {
     return Math.max.apply(
@@ -88,11 +83,6 @@ const make_markdown_table = () => {
         .join("|") +
       "|"
   );
-
-  // https://www.w3.org/TR/clipboard-apis/#the-paste-action
-  // When pasting, the drag data store mode flag is read-only, hence calling
-  // setData() from a paste event handler will not modify the data that is
-  // inserted, and not modify the data on the clipboard.
 
   var output = markdownRows.join("\n");
   console.log(output);

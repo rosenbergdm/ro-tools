@@ -1,0 +1,61 @@
+FINAL PATHOLOGIC DIAGNOSIS 
+Prostate; needle core biopsies: 
+-          Adenocarcinoma of the prostate; see pathologic parameters. 
+
+Prostate Needle Biopsy Pathologic Parameter 
+
+A)     Prostate, MRI #1; needle biopsy: 
+     - Prostatic adenocarcinoma, Gleason grade 3+4=7 (Grade Group 2). 
+- Gleason pattern 4 comprises 20% of tumor volume. 
+- Tumor involves 2 of 2 tissue cores. 
+- The linear amount of tissue with carcinoma is 3 mm and <1 mm. 
+- Tumor volume is 30% and <5% of the individual cores. 
+
+B)     Prostate, left paramedian apex; needle biopsy: 
+     - Benign prostatic tissue. 
+
+C)     Prostate, left paramedian base; needle biopsy: 
+     - High grade prostatic intraepithelial neoplasia (PIN). 
+
+D)     Prostate, left posterior apex; needle biopsy: 
+     - Atypical small acinar proliferation, suspicious for carcinoma. 
+
+E)     Prostate, left posterior base; needle biopsy: 
+     - Benign prostatic tissue. 
+
+F)     Prostate, left lateral; needle biopsy: 
+     - Benign fibromuscular tissue, skeletal muscle, fat, nerves, and vessels. 
+     - No prostatic glands present. 
+
+G)     Prostate, left anterior; needle biopsy: 
+     - Prostatic adenocarcinoma, Gleason grade 3+3=6 (Grade Group 1). 
+- Tumor involves 1 of 1 tissue core. 
+- The linear amount of tissue with carcinoma is 1 mm. 
+- Tumor volume is <5% of the submitted tissue. 
+
+H)     Prostate, right anterior; needle biopsy: 
+     - Benign prostatic tissue. 
+
+I)     Prostate, right paramedian apex; needle biopsy: 
+     - Prostatic adenocarcinoma, Gleason grade 3+3=6 (Grade Group 1). 
+- Tumor involves 1 of 1 tissue core. 
+- The linear amount of tissue with carcinoma is <1.0 mm. 
+- Tumor volume is <5% of the submitted tissue. 
+     - High grade prostatic intraepithelial neoplasia (PIN). 
+
+J)     Prostate, right paramedian base; needle biopsy: 
+     - Benign prostatic tissue. 
+
+K)     Prostate, right posterior apex; needle biopsy: 
+     - Benign prostatic tissue. 
+
+L)     Prostate, right posterior base; needle biopsy: 
+     - High grade prostatic intraepithelial neoplasia (PIN). 
+
+M)     Prostate, right lateral; needle biopsy: 
+     - High grade prostatic intraepithelial neoplasia (PIN). 
+
+gpp 
+GLADELL P PANER 
+Interpretation performed by the Attending Pathologist. 
+Electronically Signed Out by GLADELL P PANER 

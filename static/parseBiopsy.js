@@ -11,6 +11,7 @@
 //   "utf8"
 // );
 
+
 var makeRegion = function (
   rname = "",
   cores = [0, 1],
@@ -29,6 +30,7 @@ var makeRegion = function (
   };
   return region;
 };
+
 
 var sumCores = function (c1, c2) {
   return [c1[0] + c2[0], c1[1] + c2[1]];
@@ -245,3 +247,5 @@ const runParseBiopsy = function () {
   document.getElementById("pxbiopsyoutput").value = result.summary;
   return;
 };
+
+module.exports = parseBiopsy;
