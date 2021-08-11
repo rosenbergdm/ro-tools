@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const parser = require('./parseBiopsy')
+
+if(process.argv.length < 3) {
+  return 1;
+}
+
+const fname = process.argv.slice(2)[0];
+var data = fs.readFileSync(fname, "utf8");
+
+parsed_result =  parser(data);
+
+console.log(parsed_result.summary);
+
