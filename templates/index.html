@@ -43,6 +43,21 @@ datesorter ()
     pbpaste | gsort -t '/' -k3,4g -k1,2g | pbcopy;
     pbpaste
 }
+
+pbpaste  | grep  -P '^[0-9]{1,2}\/[0-9]{1,2}\/\d{2,4}' | datesort
+
+check_date_sort ()
+{
+    f1=$(mktemp);
+    f2=$(mktemp);
+    pbpaste | /usr/local/bin/ggrep --color=auto -v '^[[:space:]]*$' > $f1;
+    cat $f1 | sort -t '/' -k3,4g -k1,2g > f2;
+    res=$(diff $f1 $f2 >/dev/null 2>&1; echo $?);
+    if [[ $res > 0 ]]; then
+        diff $f1 $f2;
+    $fi;
+    rm $f1 $f2
+}
 </span>
 
 
