@@ -1,0 +1,46 @@
+{
+  "name": "ro-tools",
+  "version": "0.0.4",
+  "private": false,
+  "tsfiles": [],
+  "scripts": {
+    "run": "FLASK_APP=tools flask run"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/gts/",
+    "overrides": [
+      {
+        "files": [
+          "src/*.ts",
+          "src/**/*.ts"
+        ],
+        "rules": {
+          "node/no-extraneous-import": "off",
+          "@typescript-eslint/no-explicit-any": 1,
+          "@typescript-eslint/no-extraneious/import": "off",
+          "no-unused-vars": "off",
+          "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+              "args": "none",
+              "vars": "local"
+            }
+          ],
+          "@typescript-eslint/no-inferrable-types": [
+            "warn",
+            {
+              "ignoreParameters": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "gts": "^3.1.0",
+    "markdownlint-cli": "^0.28.1",
+    "prettier-eslint": "^13.0.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
+}
