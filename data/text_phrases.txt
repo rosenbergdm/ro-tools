@@ -61,4 +61,8 @@ We had an extensive discussion regarding the role for androgen deprivation thera
 
 
 
- We further discussed the possibility of combined hormonal therapy using Abiraterone in addition to standard ADT as a way to increase the likelihood of cure above that of traditional EBRT + ADT at the expense of more severe side effects including joint pain, fatigue, and changes in blood pressure.In his case, we suggested that he could consider local therapy because of his life expectancy >15 years and primary Gleason 4 prostate cancer, although the low volume of disease and long history of PSA surveillance and biopsy also suggests an indolent process for which surveillance could be considered. 
+ We further discussed the possibility of combined hormonal therapy using Abiraterone in addition to standard ADT as a way to increase the likelihood of cure above that of traditional EBRT + ADT at the expense of more severe side effects including joint pain, fatigue, and changes in blood pressure.In his case, we suggested that he could consider local therapy because of his life expectancy >15 years and primary Gleason 4 prostate cancer, although the low volume of disease and long history of PSA surveillance and biopsy also suggests an indolent process for which surveillance could be considered. In his case, we suggested that he could consider local therapy because of his life expectancy >15 years and primary Glea
+son 4 prostate cancer, although the low volume of disease and long history of PSA surveillance and biopsy also suggests
+an indolent process for which surveillance could be considered.
+
+

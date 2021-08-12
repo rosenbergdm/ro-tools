@@ -10,3 +10,8 @@ check_date_sort ()
     fi;
     return $res
 }
+
+add_textblock() {
+  (pbpaste && echo -e "\n\n") >> $HOME/src/ro-tools/data/text_phrases.txt
+}
+
