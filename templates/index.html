@@ -4,7 +4,18 @@
 <meta http-equiv="refresh" content="300">
 <link rel="stylesheet" href="/static/tools.css">
 <script src="/static/tools.js"></script>
-<script src="/static/parseBiopsy.js"></script>
+<script type="module">
+  import { parseBiopsy } from "../static/parseBiopsy.js"
+  // console.log(parseBiopsy.toString());
+
+  document.runParseBiopsy = function () {
+    var input_text = document.getElementById("pxbiopsyinput").value;
+    const result = parseBiopsy(input_text);
+    document.getElementById("pxbiopsyoutput").value = result.summary;
+    return;
+  };
+</script>
+
 {% endblock %}
 {% block title %}Radonc tools{% endblock %}
 {% block bodyattributes %}{% endblock %}
@@ -29,7 +40,7 @@
   Paste the raw prostate biopsy text here
 </textarea>
 <br />
-<button onclick='runParseBiopsy()' name='runpxbiopsy' id='runpxbiopsy' value='runpxbiopsy'>Parse biopsy results</button>
+<button onclick='document.runParseBiopsy()' name='runpxbiopsy' id='runpxbiopsy' value='runpxbiopsy'>Parse biopsy results</button>
 <br />
 <textarea id='pxbiopsyoutput' name='pxbiopsyoutput' rows='10', cols='80'>
   Parsed and outputted biopsy line will appear here...

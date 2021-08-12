@@ -90,3 +90,4 @@ const make_markdown_table = () => {
   document.getElementById("tableoutput").value = output;
   return;
 };
+

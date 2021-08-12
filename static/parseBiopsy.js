@@ -12,7 +12,7 @@
 // );
 
 
-var makeRegion = function (
+const makeRegion = function (
   rname = "",
   cores = [0, 1],
   gleason = [0, 0],
@@ -20,7 +20,7 @@ var makeRegion = function (
   ece = false,
   svi = false
 ) {
-  var region = {
+  let region = {
     rname: rname,
     cores: cores,
     gleason: gleason,
@@ -30,7 +30,6 @@ var makeRegion = function (
   };
   return region;
 };
-
 
 var sumCores = function (c1, c2) {
   return [c1[0] + c2[0], c1[1] + c2[1]];
@@ -199,7 +198,7 @@ const printSummary = function (workingRegions) {
   return result;
 };
 
-var parseBiopsy = function (rawtext) {
+export const parseBiopsy = function (rawtext) {
   var lines = rawtext.split("\n");
 
   var regions = {};
@@ -241,11 +240,4 @@ var parseBiopsy = function (rawtext) {
   return { summary: printSummary(regions), regions: regions };
 };
 
-const runParseBiopsy = function () {
-  var input_text = document.getElementById("pxbiopsyinput").value;
-  const result = parseBiopsy(input_text);
-  document.getElementById("pxbiopsyoutput").value = result.summary;
-  return;
-};
-
-module.exports = parseBiopsy;
+export default  parseBiopsy;

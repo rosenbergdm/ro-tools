@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "name": "ro-tools",
   "version": "0.0.4",
   "private": false,
   "tsfiles": [],
+  "files": [ "scripts/parseBiopsy.js" ],
   "scripts": {
     "run": "FLASK_APP=tools flask run"
   },
