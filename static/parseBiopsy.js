@@ -5,12 +5,13 @@
  * @description : parseBiopsy
  */
 
-// const fs = require("fs");
-// const rawtext = fs.readFileSync(
-//   "/Users/davidrosenberg/temp.prostatebiopsy.txt",
-//   "utf8"
-// );
-
+const stringMatchesOne = function(testString, matchList) {
+  var matches = false;
+  matchList.forEach( (x) => {
+    matches = matches || !! testString.match(x);
+  });
+  return matches;
+}
 
 const makeRegion = function (
   rname = "",
@@ -18,7 +19,8 @@ const makeRegion = function (
   gleason = [0, 0],
   involvement = 0,
   ece = false,
-  svi = false
+  svi = false,
+  pni = false
 ) {
   let region = {
     rname: rname,
@@ -27,15 +29,16 @@ const makeRegion = function (
     involvement: involvement,
     ece: ece,
     svi: svi,
+    pni: pni
   };
   return region;
 };
 
-var sumCores = function (c1, c2) {
+const sumCores = function (c1, c2) {
   return [c1[0] + c2[0], c1[1] + c2[1]];
 };
 
-var higherGleason = function (g1, g2) {
+const higherGleason = function (g1, g2) {
   if (g1[0] + g1[1] >= g2[0] + g2[1] && g1[0] >= g2[0]) {
     return g1;
   } else if (g1[0] + g1[1] < g2[0] + g2[1]) {
@@ -45,9 +48,9 @@ var higherGleason = function (g1, g2) {
   }
 };
 
-var addNewRegion = function (newRegion, workingRegions) {
+const addNewRegion = function (newRegion, workingRegions) {
   if (Object.keys(workingRegions).includes(newRegion.rname)) {
-    var oldRegion = workingRegions[newRegion.rname];
+    const oldRegion = workingRegions[newRegion.rname];
     workingRegions[newRegion.rname] = {
       ...oldRegion,
       cores: sumCores(oldRegion.cores, newRegion.cores),
@@ -55,6 +58,7 @@ var addNewRegion = function (newRegion, workingRegions) {
       involvement: Math.max(oldRegion.involvement, newRegion.involvement),
       ece: oldRegion.ece || newRegion.ece,
       svi: oldRegion.svi || newRegion.svi,
+      pni: oldRegion.pni || oldRegion.pni,
     };
   } else {
     workingRegions[newRegion.rname] = newRegion;
@@ -62,8 +66,7 @@ var addNewRegion = function (newRegion, workingRegions) {
   return workingRegions;
 };
 
-var getRegion = function (text) {
-  // console.log(`trying to make a region from "${text}"`);
+const getRegion = function (text) {
   const gleasonScore = getGleasonScore(text);
   var newRegion;
   if (gleasonScore[0] == 0) {
@@ -75,38 +78,41 @@ var getRegion = function (text) {
       getGleasonScore(text).gleason,
       getMaxInvolvement(text).involvement,
       getFeatures(text).ece,
-      getFeatures(text).svi
+      getFeatures(text).svi,
+      getFeatures(text).pni,
     );
   }
-  // console.log(JSON.stringify(newRegion));
   return newRegion;
 };
 
-var getFeatures = function (text) {
-  var features;
+const getFeatures = function (text) {
+  var features = { ece: false, svi: false, pni: false };
   if (
     /extraprostatic extension/.test(text) ||
     /extracapsular exten/.test(text)
   ) {
-    features = { ece: true };
-  } else {
-    features = { ece: false };
+    features = {...features, ece: true };
   }
-  features.svi = /seminal vesicle invasion/.test(text);
-  return { ...features, err: null };
+  if (/seminal vesicle invasion/.test(text)) {
+    features = {...features, svi: true };
+  }
+  if (/erineural invas/.test(text)) {
+    features = {...features, pni: true };
+  }
+  return features;
 };
 
-var getCoreCount = function (text) {
+const getCoreCount = function (text) {
   if (/adenocarcinoma/.test(text.toLowerCase())) {
     return { coreCount: [1, 1], err: null };
   }
   return { coreCount: [0, 1], err: null };
 };
 
-var getGleasonScore = function (text) {
+const getGleasonScore = function (text) {
   const matcher = new RegExp(/gleason.{1,10}([0-5]) ?\+ ?([0-5])/);
   if (matcher.test(text)) {
-    var scoreMatch = text.match(matcher);
+    const scoreMatch = text.match(matcher);
     return {
       gleason: [Number(scoreMatch[1]), Number(scoreMatch[2])],
       err: null,
@@ -115,21 +121,23 @@ var getGleasonScore = function (text) {
   return { gleason: [0, 0], err: null };
 };
 
-var getRegionName = function (text) {
+const getRegionName = function (text) {
   var low_text = text.toLowerCase();
-  if (/left/.test(low_text)) {
-    return { rname: "left", err: null };
+  if (stringMatchesOne(low_text, ['left', ' l ', ' lft '])) {
+    return { rname: "Left", err: null };
+  } else if (/left/.test(low_text)) {
+    return { rname: "Left", err: null };
   } else if (/right/.test(low_text)) {
-    return { rname: "right", err: null };
-  } else if (/mri/.test(low_text)) {
+    return { rname: "Right", err: null };
+  } else if (/mri/.test(low_text) || /target/.test(low_text)) {
     if (low_text.match(/#? ?([0-9]+)/)) {
-      var m = low_text.match(/#? ?([0-9]+)/);
+      const m = low_text.match(/#? ?([0-9]+)/);
       return { rname: `MRI target #${m[1]}`, err: null };
     }
   } else if (/ l /.test(low_text)) {
-    return { rname: "left", err: null };
+    return { rname: "Left", err: null };
   } else if (/ r /.test(low_text)) {
-    return { rname: "right", err: null };
+    return { rname: "Right", err: null };
   }
   return {
     rname: "?NAME?",
@@ -162,6 +170,9 @@ const printRegion = function (region) {
     if (region.svi) {
       result = `${result}, seminal vesicle involvement seen`;
     }
+    if (region.pni) {
+      result = `${result}, perineural invasion seen`;
+    }
   }
   return result;
 };
@@ -173,6 +184,7 @@ const printSummary = function (workingRegions) {
   var maxInvolvement = 0;
   var totalEce = false;
   var totalSvi = false;
+  var totalPni = false;
   Object.keys(workingRegions).forEach((x) => {
     resultLines.push(printRegion(workingRegions[x]));
     maxGleason = higherGleason(maxGleason, workingRegions[x].gleason);
@@ -180,6 +192,7 @@ const printSummary = function (workingRegions) {
     maxInvolvement = Math.max(maxInvolvement, workingRegions[x].involvement);
     totalEce = totalEce || workingRegions[x].ece;
     totalSvi = totalSvi || workingRegions[x].svi;
+    totalPni = totalPni || workingRegions[x].pni;
   });
 
   var result = resultLines.join("; ");
@@ -192,7 +205,8 @@ const printSummary = function (workingRegions) {
         maxGleason,
         maxInvolvement,
         totalEce,
-        totalSvi
+        totalSvi,
+        totalPni
       )
     );
   return result;
@@ -206,7 +220,7 @@ export const parseBiopsy = function (rawtext) {
   var l = [];
   var next_l = null;
 
-  var first_line_finder = /^\s*([A-Z]\)\s+.*)$/;
+  var first_line_finder = /^\s*([A-Z][\)|\.]\s+.*)$/;
   startwhile: while (lines.length > 0) {
     l = [lines.shift()];
     next_l = null;

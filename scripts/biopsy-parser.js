@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
+use esversion: 6;
+
 import fs, { readFileSync } from 'fs';
 import { parseBiopsy } from './parseBiopsy.js';
 
 if(process.argv.length < 3) {
-  abort();
+  var e = new Error('Filename required');
+  throw e;
 }
 
 const fname = process.argv.slice(2)[0];
