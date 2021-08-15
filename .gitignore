@@ -4,3 +4,4 @@ __pychache__/
 .venv
 node_modules/
 package-lock.json
+.vscode

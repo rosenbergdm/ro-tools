@@ -7,7 +7,7 @@
 
 Object.assign(String.prototype, {
     toTitleCase () {
-        return  this[0].toUpperCase() + this.substr(1) ;
+        return this[0].toUpperCase() + this.substr(1) ;
     }
 })
 
@@ -161,7 +161,7 @@ var getMaxInvolvement = function (text) {
 };
 
 const printRegion = function (region) {
-  var result = `${region.rname.toTitleCase}: ${region.cores[0]}/${region.cores[1]} areas positive for adenocarcinoma`;
+  var result = `${region.rname.toTitleCase()}: ${region.cores[0]}/${region.cores[1]} areas positive for adenocarcinoma`;
   if (region.cores[0] == 0) {
     return result;
   } else {
