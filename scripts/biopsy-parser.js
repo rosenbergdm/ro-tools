@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-use esversion: 6;
 
 import fs, { readFileSync } from 'fs';
 import { parseBiopsy } from './parseBiopsy.js';
