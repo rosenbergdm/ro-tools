@@ -1,3 +1,6 @@
+pbpaste=$(pbpaste && echo) 
+
+
 check_date_sort () 
 { 
     f1=$(mktemp);
