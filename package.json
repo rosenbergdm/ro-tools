@@ -3,7 +3,6 @@
   "name": "ro-tools",
   "version": "0.0.4",
   "private": false,
-  "tsfiles": [],
   "files": [ "scripts/parseBiopsy.js" ],
   "scripts": {
     "run": "FLASK_APP=tools flask run"
@@ -19,7 +18,7 @@
         "rules": {
           "node/no-extraneous-import": "off",
           "@typescript-eslint/no-explicit-any": 1,
-          "@typescript-eslint/no-extraneious/import": "off",
+          "@typescript-eslint/no-extraneous/import": "off",
           "no-unused-vars": "off",
           "@typescript-eslint/no-unused-vars": [
             "error",
