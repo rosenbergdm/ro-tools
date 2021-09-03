@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/local/bin/bash
 
 pbpaste=$(pbpaste && echo) 
 
@@ -70,7 +70,7 @@ get_date_struct() {
   fi
   declare -a parts
   parts=( $( echo "$1" | sed -e 's/\//\n/g' ) )
-  if [[ ${#parts} > 2 ]]; then
+  if [[ ${#parts} -gt 2 ]]; then
     # we have a range: TODO
     $PRINTF "%s\n" "An error occured" > /dev/stderr
     exit 1
@@ -98,9 +98,9 @@ lines_in_order() {
   declare -A d1
   declare -A d2
   line1="$(echo "$1" | $PERL -p -e 's/(^\W*[0-9\/\-]{4,20})( ?- ?[0-9\/\-]{4,20})?:?\W.*/\1\2/g')"
-  # $PRINTF "%s\n" "line1='$line1'"
+  $PRINTF "%s\n" "line1='$line1'"
   line2="$(echo "$2" | $PERL -p -e 's/(^\W*[0-9\/\-]{4,20})( ?- ?[0-9\/\-]{4,20})?:?\W.*/\1\2/g')"
-  # $PRINTF "%s\n" "line2='$line2'"
+  $PRINTF "%s\n" "line2='$line2'"
   eval "declare -A d1=$(get_date_struct "$line1" )"
   eval "declare -A d2=$(get_date_struct "$line2" )"
   if [[ ${d2[year]} -gt ${d1[year]} ]]; then
@@ -144,6 +144,28 @@ check_date_sort ()
        diff $f1 $f2;
     fi;
     return $res
+}
+
+check_date_sort2() {
+  f1=$($MKTEMP);
+  f2=$($MKTEMP);
+  pbpaste | grep -v '^\W+$' > $f1
+  line1=$(head -n1 $f1)
+  tail -n $(echo "$(wc -l $f1 | $AWK '{print $1}')-1" | bc ) $f1 > $f2
+  mv $f2 $f1
+  
+  while IFS= read -r line2; do
+    linesok=$(lines_in_order "$line1" "$line2")
+    if [[ $linesok -eq 1 ]]; then
+      echo "ok"
+    else
+      $PRINTF "%s\n\n" "ERROR, lines '$line1' and '$line2' are out of order" > /dev/stderr
+      return 1
+    fi
+    line1="$line2"
+  done < $f1
+
+  $PRINTF "%s\n" "0"
 }
 
 add_textblock() {
