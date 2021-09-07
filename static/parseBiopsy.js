@@ -91,20 +91,78 @@ const getRegion = function (text) {
   return newRegion;
 };
 
+const anyMatches = function (text, matchMap) {
+  // Matches are of the sort { r'REGEX': RESULT, ... }; matching stops after the first match
+  const keys = matchMap.keys();
+  var matcher = keys.next();
+  var reg;
+  while(! matcher.done ) {
+    reg = new RegExp(matcher.value);
+    if (reg.test(text)) {
+      return matchMap.get(matcher.value);
+    }
+    matcher = keys.next();
+  }
+  return false
+}
+
+/*
+  var testText = 'David Michael Rosenberg';
+  var myMatchMap = new Map ();
+  myMatchMap.set ('Dav$', false);
+  myMatchMap.set ('b..g$', 'last');
+  myMatchMap.set ('Mic', 'mid');
+  myMatchMap.set ('avi', 'first');
+  */
+
 const getFeatures = function (text) {
   var features = { ece: false, svi: false, pni: false };
-  if (
-    /extraprostatic extension/.test(text) ||
-    /extracapsular exten/.test(text)
-  ) {
+  if (anyMatches (text, new Map([
+    ['extraprostatic.{1,30}extension.{1,5}not', false], 
+    ['extracapsular.{1,30}extension{1,5}not', false], 
+    ['extraprostatic.{1,30}extension', true], 
+    ['extracapsular.{1,30}extension', true], 
+    ['\\+.{0,1}epe'],
+    ['\\+.{0,1}extraprostatic'],
+    ['\\+.{0,1}ece'],
+    ['\\+.{0,1}extracapsular'],
+    ['-.{0,1}epe'],
+    ['-.{0,1}extraprostatic'],
+    ['-.{0,1}ece'],
+    ['-.{0,1}extracapsular'],
+  ]) ) ) {
     features = {...features, ece: true };
   }
-  if (/seminal vesicle invasion/.test(text)) {
+  if (anyMatches (text, new Map([
+    ['seminal.{1,30}vesicle.{1,15}not', false], 
+    ['sv.{1,15}not', false], 
+    ['invad.{1,8}not.{1,8}sv', false], 
+    ['invad.{1,8}not.{1,8}seminal', false], 
+    ['seminal.{1,30}vesicle.{1,5}invasion', true], 
+    ['sv.{1,5}invasion', true], 
+    ['invad.{1,8}sv', true], 
+    ['invad.{1,8}seminal', true], 
+    ['\\+.{0,1}svi'],
+    ['\\+.{0,1}seminal'],
+    ['-.{0,1}svi'],
+    ['-.{0,1}seminal'],
+  ]) ) ) {
     features = {...features, svi: true };
   }
-  if (/erineural invas/.test(text)) {
+  if (anyMatches (text, new Map([
+    ['perineural.{1,15}not', false], 
+    ['pni.{1,15}not', false], 
+    ['not.{1,8}invad.{1,8}perineur', false], 
+    ['perineural.{1,5}invasion', true], 
+    ['\\+.{0,1}pni', true], 
+    ['\\+.{0,1}perineural', true], 
+    ['-.{0,1}pni', false], 
+    ['-.{0,1}perineural', false], 
+
+  ]) ) ) {
     features = {...features, pni: true };
   }
+
   return features;
 };
 

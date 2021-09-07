@@ -5,3 +5,7 @@ __pychache__/
 node_modules/
 package-lock.json
 .vscode
+**~
+**~
+.vscode
+.vscode/*
