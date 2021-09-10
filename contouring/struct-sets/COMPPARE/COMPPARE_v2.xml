@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureTemplate Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Preview Version="1.2" ID="COMPPARE_PROSTATE_2" Type="Structure" ApprovalStatus="Unapproved" Diagnosis="adenocarcinoma of the prostate" TreatmentSite="Prostate and Seminal Vessicles." Description="" AssignedUsers="uchad\nsf6756" LastModified=" September 10 2021 14:08:57:382" ApprovalHistory="uchad\nsf6756 Created [ September 10 2021 14:08:31:878 ]"/>
+ <Structures>
+  <Structure ID="BODY" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>BODY</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="BODY" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Skin Rendering</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="Bladder" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="15900" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Yellow</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="CTVp" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>CTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="CTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Pink</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="CTVpsv" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>CTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="CTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Contour - Red</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="Prostate" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="9600" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Blue</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="Femur_Head_L" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="55012" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Bone Rendering</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="Femur_Head_R" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="55011" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Bone Rendering</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="PenileBulb" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="19614" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>RGB255 64255</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="PTVp" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>PTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="PTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Pink</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="PTVpsv" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>PTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="PTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Magent</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="Rectum" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="14544" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Brown</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="SeminalVes" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Organ</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="19386" CodeScheme="FMA" CodeSchemeVersion="3.2"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>RGB 70130180</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="IGRT_Fiducial1" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Fixation</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="28789" CodeScheme="RADLEX" CodeSchemeVersion="3.8"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Magent</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="IGRT_Fiducial2" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Fixation</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="28789" CodeScheme="RADLEX" CodeSchemeVersion="3.8"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Magent</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="IGRT_Fiducial3" Name="">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>Fixation</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="28789" CodeScheme="RADLEX" CodeSchemeVersion="3.8"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Magent</ColorAndStyle>
+   <SearchCTLow xsi:nil="true"></SearchCTLow>
+   <SearchCTHigh xsi:nil="true"></SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+ </Structures>
+</StructureTemplate>
