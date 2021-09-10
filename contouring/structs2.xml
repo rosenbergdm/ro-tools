@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureTemplate Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Preview Version="1.2" ID="_Targets_SIB" Type="Structure" ApprovalStatus="Approved" Diagnosis="" TreatmentSite="" Description="For SIB targets" AssignedUsers="uchad\cstepaniak" LastModified=" July 19 2021 17:45:32:323" ApprovalHistory="uchad\cstepaniak Created [ July 13 2021 17:34:30:810 ];uchad\cstepaniak Approved [ July 13 2021 17:51:01:845 ]"/>
+ <Structures>
+  <Structure ID="_GTV_High" Name="_GTV_High">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>GTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="GTVp" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Red</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_CTV_High" Name="_CTV_High">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>CTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="CTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Blue</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_PTV_High" Name="_PTV_High">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>PTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="PTV_High" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Green</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_CTV_Int" Name="_CTV_Int">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>CTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="CTV_Intermediate" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - Cyan</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_PTV_Int" Name="_PTV_Int">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>PTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="PTV_Intermediate" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - L-Gree</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_CTV_Low" Name="_CTV_Low">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>CTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="CTV_Low" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - D-Blue</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+  <Structure ID="_PTV_Low" Name="_PTV_Low">
+   <Identification>
+    <VolumeID></VolumeID>
+    <VolumeCode></VolumeCode>
+    <VolumeType>PTV</VolumeType>
+    <VolumeCodeTable></VolumeCodeTable>
+    <StructureCode Code="PTV_Low" CodeScheme="99VMS_STRUCTCODE" CodeSchemeVersion="1.0"/>
+   </Identification>
+   <TypeIndex>2</TypeIndex>
+   <ColorAndStyle>Segment - D-Gree</ColorAndStyle>
+   <SearchCTLow>1000</SearchCTLow>
+   <SearchCTHigh>1000</SearchCTHigh>
+   <DVHLineStyle>0</DVHLineStyle>
+   <DVHLineColor>-16777216</DVHLineColor>
+   <DVHLineWidth>1</DVHLineWidth>
+   <EUDAlpha xsi:nil="true"></EUDAlpha>
+   <TCPAlpha xsi:nil="true"></TCPAlpha>
+   <TCPBeta xsi:nil="true"></TCPBeta>
+   <TCPGamma xsi:nil="true"></TCPGamma>
+  </Structure>
+ </Structures>
+</StructureTemplate>
