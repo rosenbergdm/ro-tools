@@ -29,7 +29,7 @@ const EventDate = (srcline, year, month, day) => {
 
 const DATE_RANGE_MATCHER = new RegExp(
   /^(\d{1,2}\/)?(\d{1,2}\/)?([0-9]{2,4})\W?-\W?(\d{1,2}\/)?(\d{1,2}\/)?([0-9]{2,4}):?\W+.*$/
-)
+);
 
 const DATE_MATCHER = new RegExp(
   /^(\d{1,2}\/)?(\d{1,2}\/)?([0-9]{2,4}):?\W+.*$/

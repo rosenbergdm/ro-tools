@@ -1,0 +1,40 @@
+RADIATION ONCOLOGY COMPLETION SUMMARY 
+
+PATIENT: @NAME@
+
+Requesting Physician: Dr. {URO - Surgeon:228890},  Department of Urology 
+PCP: Dr. @PCP@
+
+Attending Physician: Dr. Stanley Liauw
+Resident Physician: Dr. David M. Rosenberg
+
+Diagnosis:  
+{Intact or postop prostate summary:5566}
+
+History summary: @NAME@ is a @AGE@ old @SEX@ with a history of adenocarcinoma of the prostate. We saw @HIM@ in consultation and recommended radiation therapy with {Adjunct therapy with EBRT for prostate cancer:5569:::0}. @CAPHE@ was in agreement with this treatment plan.
+
+
+SUMMARY OF RADIATION THERAPY
+
+Region Treated	Radiation
+Energy	Min. Tumor
+Dose (Gy)	Date From	Date To
+
+				
+				
+
+***DELETEME: @radiation@
+
+Total cumulative dose: *** Gy in *** Gy fractions
+
+Representative isodose lines:
+
+Axial picture here	Coronal or sagittal picture here
+
+Treatment Summary: Signed informed consent was obtained prior to the start of treatment. Treatment positioning, and target volumes and organs at risk were delineated as described in his radiation treatment planning note. @CAPHE@ was treated with {?DRIMRT:5628} plan to doses above. @CAPHE@ received treatment once daily, Monday through Friday, to a cumulative dose of *** Gy. {SLSUM_ADJUNCT (Optional):5570}
+
+Overall, @NAME@ tolerated radiation treatment well. There were no*** treatment related breaks. Toxicities included Skin {DRCTCAELEVEL:5629}; Large bowel {DRCTCAELEVEL:5629}; Bladder {DRCTCAELEVEL:5629}. @CAPHE@ required ***no medications to manage these side effects. Labs were monitored and remained stable throughout treatment.  
+
+Follow-up Instructions: @NAME@ was given a follow-up appointment for ***.  He also will follow up with ***.  Appropriate skin care instructions were given.  @CAPHE@ was instructed to notify us with any significant changes in function or performance status, or with any future questions or concerns.  
+
+@DRNAME@

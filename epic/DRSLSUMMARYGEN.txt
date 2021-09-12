@@ -1,0 +1,39 @@
+RADIATION ONCOLOGY COMPLETION SUMMARY 
+
+PATIENT: @NAME@
+
+Requesting Physician: Dr. @REFPROVLNAME@,  Department of ***
+PCP: Dr. @PCP@
+
+Attending Physician: Dr. Stanley Liauw
+Resident Physician: Dr. David M. Rosenberg
+
+Diagnosis:  @DIAGX@
+
+History summary: @NAME@ is a @AGE@ old @SEX@ with a history of ***ONELINER***. We saw @HIM@ in consultation and recommended radiation therapy with ***. @CAPHE@ was in agreement with this treatment plan.
+
+
+SUMMARY OF RADIATION THERAPY
+
+Region Treated	Radiation
+Energy	Min. Tumor
+Dose (Gy)	Date From	Date To
+
+				
+				
+
+***DELETEME: @radiation@
+
+Total cumulative dose: *** Gy in *** Gy fractions
+
+Representative isodose lines:
+
+Axial picture here	Coronal or sagittal picture here
+
+Treatment Summary: Signed informed consent was obtained prior to the start of treatment. Treatment positioning, and target volumes and organs at risk were delineated as described in his radiation treatment planning note. @CAPHE@ was treated with {?DRIMRT:5628} plan to doses above. @CAPHE@ received treatment once daily, Monday through Friday, to a cumulative dose of *** Gy. ***
+
+Overall, @NAME@ tolerated radiation treatment well. There were {?No:5697} treatment related breaks. Toxicities included Skin ***, Large bowel: ***, Nausea: ***, Vomiting: ***, Bladder: ***. @CAPHE@ required {?No:5697} medications to manage these side effects. Labs were monitored and remained stable throughout treatment.  
+
+Follow-up Instructions: @NAME@ was given a follow-up appointment for ***.  He also will follow up with ***.  Appropriate skin care instructions were given.  @CAPHE@ was instructed to notify us with any significant changes in function or performance status, or with any future questions or concerns.  
+
+@DRNAME@
