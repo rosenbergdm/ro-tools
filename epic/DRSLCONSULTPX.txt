@@ -1,0 +1,75 @@
+{ISVV:5544}
+
+Type of Note: {TYPE OF NOTE:222160}
+
+Patient Name:	@NAME@
+MRN / CSN:	@MRN@ / @CSN@
+Date of Birth / Age:	@DOB@  -  @AGE@
+Encounter Date:	@ED@
+
+CARE TEAM
+
+Encounter Provider:	@ENCPROVNMTITLE@
+Referring Physician (if known):	@REFPROV@
+PCP (if known):	@PCP@
+
+VISIT DIAGNOSIS
+@DIAGX@
+
+SUBJECTIVE
+@NAME@ is a @AGE@ old @SEX@ patient who presents with ***.
+
+HISTORY OF PRESENT ILLNESS
+
+***
+
+@PXHISTORY@
+
+PAST MEDICAL, SURGICAL, SOCIAL, AND FAMILY HISTORY
+@PMH@
+@PSH@
+@SOCHX@
+@FAMHX@
+
+***Work/retired
+***Who lives with
+***How spends time
+
+
+ALLERGIES AND ADVERSE DRUG REACTIONS
+@ALG@
+
+CURRENT MEDICATIONS
+@CMED@
+
+OBJECTIVE
+@ROSBYAGE@
+
+@PHYEXAMBYAGE@
+@MULTIPLEVITALS@
+
+Last recorded pain score (if available): 	@FLOW(710069)@
+
+ECOG:***
+
+REVIEW OF LABORATORY DATA
+I have reviewed the following:
+@LABCBCDIFF@	@LABCMP@
+	
+
+@LASTLABBRIEF[PSATOTAL:20@
+
+
+REVIEW OF ANCILLARY STUDIES
+I have reviewed the following:
+
+RADIOLOGIC STUDIES:
+
+
+
+ASSESSMENT & PLAN
+@NAME@ is a @AGE@ old @SEX@ patient who presents with ***.
+
+
+@drname@
+
