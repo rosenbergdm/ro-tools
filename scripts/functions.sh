@@ -83,11 +83,12 @@ get_date_struct() {
     exit 1
   elif [[ ${#parts[@]} == 3 ]]; then 
     year="$( echo "20${parts[2]}" | $SED -e  's/^.*\(....\)$/\1/g' )"
-    month="$( echo "0${parts[0]}" | $SED -e 's/^.*\(..\)$/\1/g' )"
-    day="$(echo "0${parts[1]}" | $SED -e 's/^.*\(..\)$/\1/g' )"
+    # month="$( echo "${parts[0]}" | $SED -e 's/^.*\(..\)$/\1/g' )"
+    month="${parts[0]}"
+    day="${parts[1]}"
   elif [[ ${#parts[@]} == 2 ]]; then
     year="$( echo "20${parts[1]}" | $SED -e  's/^.*\(....\)$/\1/g' )"
-    month="$( echo "0${parts[0]}" | $SED -e 's/^.*\(..\)$/\1/g' )"
+    month="${parts[0]}"
     day="-1"
   elif [[ ${#parts[@]} == 1 ]]; then
     year="$( echo "20${parts[0]}" | $SED -e  's/^.*\(....\)$/\1/g' )"
