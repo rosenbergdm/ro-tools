@@ -66,6 +66,7 @@ export commands=(AWK BASENAME DATE DIRNAME FIND GIT GUNZIP GZIP
 	STAT REALPATH TOUCH)
 
 get_date_struct() {
+<<<<<<< HEAD
   # unset $(declare -A | $GREP dstruct |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*dstruct[A-Za-z]*).*/\1/g')
   # unset $(declare -A | $GREP d1 |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*d1[A-Za-z]*).*/\1/g')
   # unset $(declare -A | $GREP d2 |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*d2[A-Za-z]*).*/\1/g')
@@ -102,6 +103,43 @@ get_date_struct() {
   typeset -A | $GREP dstruct | sed -e 's/^.*dstruct=//g'
   unset dstruct parts day year month
   return 0
+=======
+	# unset $(declare -A | $GREP dstruct |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*dstruct[A-Za-z]*).*/\1/g')
+	# unset $(declare -A | $GREP d1 |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*d1[A-Za-z]*).*/\1/g')
+	# unset $(declare -A | $GREP d2 |  perl -p -e 's/^.*declare -.{1,2} ([A-Za-z]*d2[A-Za-z]*).*/\1/g')
+	usage=$'Use like this: > declare -A datestruct=$(eval "$(get_date_struct 02/02/21)")'
+	if [[ "z$1" == "z" ]]; then
+		$PRINTF "%s\n\n" "$usage" >/dev/stderr
+		return 4
+	fi
+	declare -a parts
+	parts=($(echo "$1" | sed -e 's/\//\n/g'))
+	if [[ ${#parts[@]} -gt 3 ]]; then
+		# printf "%s\n\n" "\${#parts} = '${#parts[@]}'" > /dev/stderr
+		# we have a range: TODO
+		$PRINTF "%s\n" "An error occured" >/dev/stderr
+		exit 1
+	elif [[ ${#parts[@]} == 3 ]]; then
+		year="$(echo "20${parts[2]}" | $SED -e 's/^.*\(....\)$/\1/g')"
+		month="$(echo "${parts[0]}" | $SED -e 's/^.*\(..\)$/\1/g')"
+		day="$(echo "0${parts[1]}" | $SED -e 's/^.*\(..\)$/\1/g')"
+	elif [[ ${#parts[@]} == 2 ]]; then
+		year="$(echo "20${parts[1]}" | $SED -e 's/^.*\(....\)$/\1/g')"
+		month="$(echo "${parts[0]}" | $SED -e 's/^.*\(..\)$/\1/g')"
+		day="-1"
+	elif [[ ${#parts[@]} == 1 ]]; then
+		year="$(echo "20${parts[0]}" | $SED -e 's/^.*\(....\)$/\1/g')"
+		month="-1"
+		day="-1"
+	fi
+	declare -A dstruct
+	dstruct[year]=$year
+	dstruct[day]=$day
+	dstruct[month]=$month
+	typeset -A | $GREP dstruct | sed -e 's/^.*dstruct=//g'
+	unset dstruct parts day year month
+	return 0
+>>>>>>> 033b8c094ab7fb79a13ea2729b6c7850056ae6be
 }
 
 lines_in_order() {
@@ -198,8 +236,4 @@ check_date_sort() {
 
 add_textblock() {
 	(pbpaste && echo -e "\n\n") >>$HOME/src/ro-tools/data/text_phrases.txt
-}
-lecalc () 
-{ 
-    echo "(100 - $1) / 2 - 2" | bc
 }

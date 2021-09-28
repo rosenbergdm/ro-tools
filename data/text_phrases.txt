@@ -69,3 +69,6 @@ His most recent PSA of 0.05 does not meet criteria for biochemical failure and a
 
 NOADT 
 We had an extensive discussion regarding the role for androgen deprivation therapy (ADT). We reviewed side effects including hot flashes, fatigue, breast tenderness, decreased libido, and potential effects on metabolism (inclusive of weight gain, effects on hypertension or diabetes, cholesterol control, and heart health) and bone health. It is unclear in this case whether benefits outweigh risks with regard to the addition of ADT, and it was suggested he would be a good candidate for RT without ADT.NOADT 
+
+NOBRACHY
+Because of his (***moderate baseline urinary dysfunction OR large prostate gland size OR IPSS score > 15 OR ...), we did not prioritize brachytherapy for him and focused on discussing external beam radiation as the preferred radiation option.
