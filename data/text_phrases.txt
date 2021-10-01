@@ -72,3 +72,6 @@ We had an extensive discussion regarding the role for androgen deprivation thera
 
 NOBRACHY
 Because of his (***moderate baseline urinary dysfunction OR large prostate gland size OR IPSS score > 15 OR ...), we did not prioritize brachytherapy for him and focused on discussing external beam radiation as the preferred radiation option.
+
+SpaceOAR
+4. In order to mitigate the potential increased risk of late bowel toxicity including bleeding, we routinely offer placement of a hydrogel spacer (SpaceOAR) between the rectum and prostate for all patients requiring of anticoagulation at the time of treatment. The hydrogel, which is absorbed by the body over the year following placement, provides increases the separation between the prostate and rectum and has been shown to reduce the rate of late rectal toxicity. This hydrogel spacer is scheduled along with the CT and gold fiducial placement in our department.
