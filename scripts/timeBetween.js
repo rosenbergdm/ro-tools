@@ -23,21 +23,27 @@ export const durationSince = (treatment) => {
 
 export const intervalSince = (treatment, restype = "complete") => {
   const interval_since = durationSince(treatment);
-  if (restype == "complete") {
-    return (
-      String(interval_since[0]) +
-      " years and " +
-      String(interval_since[1]) +
-      " months since completion of RT on " +
-      treatment
-    );
+  var result = "";
+  if (interval_since[0] > 1) {
+    result = String(interval_since[0]) + " years";
+  } else if (interval_since[0] == 1) {
+    result = String(interval_since[0]) + " year";
   }
-  return (
-    String(interval_since[0]) +
-    " years and " +
-    String(interval_since[1]) +
-    " months"
-  );
+  if (interval_since[1] > 1) {
+    if (result.length > 0) {
+      result += " and ";
+    }
+    result += String(interval_since[1]) + " months";
+  } else if (interval_since[1] == 1) {
+    if (result.length > 0) {
+      result += " and ";
+    }
+    result += String(interval_since[1]) + " month";
+  }
+  if (restype == "complete") {
+    return result + " since completion of RT on " + treatment;
+  }
+  return result;
 };
 
 export default intervalSince;
