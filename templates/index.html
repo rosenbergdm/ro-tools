@@ -15,37 +15,61 @@
     return;
   };
 </script>
+<script type="module">
+  import { intervalSince } from "/static/timeBetween.js"
+  document.runIntervalCalc = function() {
+    var input_text = document.getElementById("datefrom").value;
+    const interval = intervalSince(input_text)
+    document.getElementById('timesince').value = interval;
+    return
+  }
+</script>
+
 
 {% endblock %}
-{% block title %}Radonc tools{% endblock %}
+{% block title %}RadOnc tools{% endblock %}
 {% block bodyattributes %}{% endblock %}
 {% block body %}
 <h1>Radonc tools</h1>
 
 <h3>Markdown table maker (Excel table copy format)</h3>
-<textarea id='tableinput' name='tableinput' rows='10', cols='80'>
-  Paste the ms office table here...
+<textarea id='tableinput' name='tableinput' rows='20', cols='120'>
+Paste the ms office table here...
 </textarea>
 <br />
 <button onclick='make_markdown_table()' name='runtable' id='runtable' value='runtable'>Make Markdown Table</button>
 <br />
-<textarea id='tableoutput' name='tableoutput' rows='10', cols='80'>
-  Output markdown table will appear here...
+<textarea id='tableoutput' name='tableoutput' rows='20', cols='120'>
+Output markdown table will appear here...
 </textarea>
 <br />
 <hr />
 <br />
 <h3>Prostate biopsy parser</h3>
 <textarea id='pxbiopsyinput' name='pxbiopsyinput' rows='10', cols='80'>
-  Paste the raw prostate biopsy text here
+Paste the raw prostate biopsy text here
 </textarea>
 <br />
 <button onclick='document.runParseBiopsy()' name='runpxbiopsy' id='runpxbiopsy' value='runpxbiopsy'>Parse biopsy results</button>
 <br />
 <textarea id='pxbiopsyoutput' name='pxbiopsyoutput' rows='10', cols='80'>
-  Parsed and outputted biopsy line will appear here...
+Parsed and outputted biopsy line will appear here...
 </textarea>
 <br />
+
+<br />
+<h3>Time interval calculator (enter like '10/3/2013')</h3>
+<textarea id='datefrom' name='datefrom' rows='1', cols='80'>
+1/1/1991
+</textarea>
+<br />
+<button onclick='document.runIntervalCalc()' name='runintcalc' id='runintcalc' value='runintcalc'>Parse biopsy results</button>
+<br />
+<textarea id='timesince' name='timesince' rows='10', cols='80'>
+result....
+</textarea>
+<br />
+
 
 <h3>Bash date sorting function</h3>
 <span style="white-space:pre;display:block;margin:25px;font-family:'Lucida Console', monospace">
