@@ -64,7 +64,7 @@ const addNewRegion = function (newRegion, workingRegions) {
       involvement: Math.max(oldRegion.involvement, newRegion.involvement),
       ece: oldRegion.ece || newRegion.ece,
       svi: oldRegion.svi || newRegion.svi,
-      pni: oldRegion.pni || oldRegion.pni,
+      pni: oldRegion.pni || newRegion.pni,
     };
   } else {
     workingRegions[newRegion.rname] = newRegion;
@@ -116,6 +116,7 @@ const anyMatches = function (text, matchMap) {
   */
 
 const getFeatures = function (text) {
+  text = text.toLowerCase()
   var features = { ece: false, svi: false, pni: false };
   if (anyMatches (text, new Map([
     ['extraprostatic.{1,30}extension.{1,5}not', false], 
@@ -156,13 +157,14 @@ const getFeatures = function (text) {
     ['perineural.{1,5}invasion', true], 
     ['\\+.{0,1}pni', true], 
     ['\\+.{0,1}perineural', true], 
-    ['-.{0,1}pni', false], 
-    ['-.{0,1}perineural', false], 
-
+    ['-.{0,1}pni', true], 
+    ['-.{0,1}perineural', true], 
+    ['·.{0,1}perineural'],
+    ['·.{0,1}pni']
   ]) ) ) {
     features = {...features, pni: true };
   }
-
+  // console.log(JSON.stringify(features))
   return features;
 };
 
